@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 // components/CurrencyConverter.js
 'use client';
 import { useState } from 'react';
@@ -24,7 +25,7 @@ const CurrencyConverter = () => {
 
   return (
   
-    <div className='min-h-screen  px-2  flex flex-col justify-center items-center'>
+    <div className='px-2 flex flex-col justify-center items-center'>
      <input type="text" value={sourceCurrency} onChange={(e) => setSourceCurrency(e.target.value)} placeholder="Source Currency" />
       <input type="text" value={destinationCurrency} onChange={(e) => setDestinationCurrency(e.target.value)} placeholder="Destination Currency" />
       <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" />
