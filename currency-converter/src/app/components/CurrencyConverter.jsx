@@ -38,7 +38,7 @@ const CurrencyConverter = ({ currencies }) => {
     <div className='px-2 flex flex-col justify-center items-center'>
       <select value={sourceCurrency} onChange={(e) => setSourceCurrency(e.target.value)}>
         <option value="">Select Source Currency</option>
-        {Object && keys(currencies).map(currency => (
+        {Object.keys(currencies).map(currency => (
           <option key={currency} value={currency}>{currencies[currency]}</option>
         ))}
       </select>
