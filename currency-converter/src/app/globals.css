@@ -2,4 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+*{
+ background-color: brown;
+ /* padding: ; */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
