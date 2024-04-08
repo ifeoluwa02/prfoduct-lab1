@@ -2,11 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
- background-color: brown;
- /* padding: ; */
+#alignment{
  display: flex;
  align-items: center;
  justify-content: center;
- 
+ text-align: center;
+ place-content: center;
+ flex-direction: row;
+ padding: 200px;
+ border: 1px solid red;
+
+ background: url(/images/background.png);
+}
+#alignment2{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-align: center;
+ place-content: center;
+ flex-direction: row;
+ padding: 170px;
+ border: 1px solid red;
+ gap: 10px;
+}
+input{
+border: 1px solid black; 
+padding: 10px;
+}
+button{
+ padding: 10px ;
+ background-color: red;
+ border-radius: 5px;
+}
+select{
+ border: 1px solid black; 
+padding: 10px;
 }
