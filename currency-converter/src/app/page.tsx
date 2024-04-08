@@ -37,7 +37,7 @@ const Page = ({ currencies }: any) => {
   };
 
   return (
-    <div className='bg-red-800'>
+    <div className='bg-red-800 flex items-center justify-center p-32 border border-solid border-black rounded'>
       <div className=' text-red-300 '>
         <select value={sourceCurrency} onChange={(e) => setSourceCurrency(e.target.value)}>
           <option value="">Select Source Currency</option>
