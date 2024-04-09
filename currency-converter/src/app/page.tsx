@@ -43,8 +43,8 @@ const Page = ({ curriencies }: any) => {
   };
 
   return (
-    <div id='alignment' className='bg-red-800 flex items-center justify-center p-32 border border-solid border-black rounded'>
-      <div id='alignment2' className=' text-red-300 '>
+    <div id='alignment'>
+      <div id='alignment2'>
         <select value={sourceCurrency} onChange={(e) => setSourceCurrency(e.target.value)}>
           <option value="">Select Source Currency</option>
           {currencies && Object.keys(currencies).map(currency => (
