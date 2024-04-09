@@ -2,7 +2,7 @@
 
 import axios from 'axios';
 
-const apiUrl = 'http://localhost:3000'; // Replace this with your backend API URL
+const apiUrl = 'http://localhost:3000'; 
 
 export const convertCurrency = async (sourceCurrency, destinationCurrency, amount) => {
   try {
