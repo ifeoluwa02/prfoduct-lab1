@@ -9,8 +9,8 @@
  text-align: center;
  place-content: center;
  flex-direction: row;
- padding: 143px;
- border: 1px solid red;
+ padding: 140px;
+ /* border: 1px solid red; */
 
  background: url(/images/background.png);
 }
@@ -21,7 +21,7 @@
  text-align: center;
  place-content: center;
  flex-direction: row;
- padding: 170px;
+ padding: 145px;
  border: 1px solid red;
  gap: 10px;
 }
@@ -37,4 +37,9 @@ button{
 select{
  border: 1px solid black; 
 padding: 10px;
+}
+p{
+ color: aqua;
+ font-size: 20px;
+ background-color: blueviolet;
 }

@@ -4,14 +4,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { convertCurrency } from './utils/api';
 
-const Page = ({ currencies }: any) => {
+interface CurrencyData {
+  [key: string]: string;
+}
+
+
+const Page = ({ curriencies }: any) => {
   const [sourceCurrency, setSourceCurrency] = useState('');
-  const [curriencies, setCurrencies] = useState({});
+  const [currencies, setCurrencies] = useState<CurrencyData>({});
   const [destinationCurrency, setDestinationCurrency] = useState('');
   const [amount, setAmount] = useState('');
   const [convertedAmount, setConvertedAmount] = useState('');
   const [fxQuote, setFxQuote] = useState('');
   const [error, setError] = useState('');
+  
 
   const fetchCurrencies = async () => {
     try {
@@ -41,11 +47,19 @@ const Page = ({ currencies }: any) => {
       <div id='alignment2' className=' text-red-300 '>
         <select value={sourceCurrency} onChange={(e) => setSourceCurrency(e.target.value)}>
           <option value="">Select Source Currency</option>
-          {/* {Object.keys(currencies).map(currency => (
+          {currencies && Object.keys(currencies).map(currency => (
             <option key={currency} value={currency}>{currencies[currency]}</option>
-          ))} */}
+          ))}
+
         </select>
-        <input type="text" value={destinationCurrency} onChange={(e) => setDestinationCurrency(e.target.value)} placeholder="Destination Currency" />
+        <select value={destinationCurrency} onChange={(e) => setDestinationCurrency(e.target.value)}>
+          <option value="">Select Destination Currency</option>
+          {currencies && Object.keys(currencies).map(currency => (
+            <option key={currency} value={currency}>{currencies[currency]}</option>
+          ))}
+
+        </select>
+        {/* <input type="text" value={destinationCurrency} onChange={(e) => setDestinationCurrency(e.target.value)} placeholder="Destination Currency" /> */}
         <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" />
         <button onClick={handleConvertCurrency}>Convert</button>
         {error && <p>Error: {error}</p>}
