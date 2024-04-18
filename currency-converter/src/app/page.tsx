@@ -3,6 +3,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { convertCurrency } from './utils/api';
+// import { server } from './mockServer';
+
+
+// beforeAll(() => server.listen());
+// afterEach(() => server.resetHandlers());
+// afterAll(() => server.close());
+
 
 interface CurrencyData {
   [key: string]: string;

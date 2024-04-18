@@ -22,7 +22,7 @@
  place-content: center;
  flex-direction: row;
  padding: 145px;
- border: 1px solid red;
+ /* border: 1px solid red; */
  gap: 10px;
 }
 input{
@@ -31,7 +31,8 @@ padding: 10px;
 }
 button{
  padding: 10px ;
- background-color: red;
+ background-color: #C7D4CE;
+ color: white;
  border-radius: 5px;
 }
 select{
@@ -42,4 +43,56 @@ p{
  color: aqua;
  font-size: 20px;
  background-color: blueviolet;
+}
+
+@media (max-width: 768px){
+ *{
+  /* overflow: hidden; */
+ }
+ #alignment{
+  display: grid;
+  padding: 10px;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  place-content: center;
+  /* width: 90px; */
+  /* padding: 7px; */
+  /* flex-direction: row; */
+  /* padding: 10px; */
+  /* border: 1px solid red; */
+  background-size: cover;
+  background-position: center;
+ 
+  /* background: url(/images/background.png); */
+ }
+ #alignment2{
+  display: grid;
+  /* padding: 7px; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* text-align: center; */
+  place-content: center;
+  width: 97vw;
+  /* width: 90vw; */
+  /* flex-direction: row; */
+  /* padding: 15px; */
+  /* border: 1px solid red; */
+  gap: 10px;
+ }
+ input{
+  border: 1px solid black; 
+  /* padding: 0px; */
+  }
+  select{
+   border: 1px solid black; 
+  /* padding: 0px; */
+  }
+  p{
+   color: aqua;
+   font-size: 12px;
+   background-color: blueviolet;
+  }
 }
