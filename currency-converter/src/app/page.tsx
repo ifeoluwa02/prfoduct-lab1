@@ -18,7 +18,7 @@ interface CurrencyData {
 
 const Page = ({ curriencies }: any) => {
   const [sourceCurrency, setSourceCurrency] = useState('');
-  const [currencies, setCurrencies] = useState<CurrencyData>({});
+  const [currencies, setCurrencies] = useState("");
   const [destinationCurrency, setDestinationCurrency] = useState('');
   const [amount, setAmount] = useState('');
   const [convertedAmount, setConvertedAmount] = useState('');
@@ -38,9 +38,11 @@ const Page = ({ curriencies }: any) => {
   const postCurrencies = async () => {
     try {
       const response = await axios.post('http://localhost:3001/api/convert',{
-        amount
-      });
-      setCurrencies(response.data);
+        
+        amount: amount
+      })
+      console.log(response.data)
+      setConvertedAmount(response.data.convertedAmount)
     } catch (error) {
       console.error('Error fetching currencies:', error);
     }
@@ -51,15 +53,7 @@ const Page = ({ curriencies }: any) => {
     fetchCurrencies();
   }, []);
 
-  // const handleConvertCurrency = async () => {
-  //   try {
-  //     const response = await convertCurrency(sourceCurrency, destinationCurrency, amount);
-  //     setConvertedAmount(response.convertedAmount);
-  //     setFxQuote(response.fxQuote);
-  //   } catch (error:any) {
-  //           setError(error.response ? error.response.data.message : error.message);
-  //   }
-  // };
+  
 
   return (
     <div id='alignment'>
@@ -82,8 +76,8 @@ const Page = ({ curriencies }: any) => {
         <input type="number" onChange={(e) => setAmount(e.target.value)} placeholder="Amount" />
         <button onClick={ postCurrencies}>Convert</button>
         {error && <p>Error: {error}</p>}
-        {convertedAmount && <p>Converted Amount: {convertedAmount}</p>}
-        {fxQuote && <p>FX Quote: {fxQuote}</p>}
+         <p>Converted Amount: {convertedAmount}</p>
+         <p>FX Quote: {fxQuote}</p>
       </div>
     </div>
   );
